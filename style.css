@@ -6,66 +6,135 @@ body {
 .container {
     display: grid;
     height: 100vh;
-    grid-template-columns: minmax(300px, 1fr) 4fr;
+    grid-template-columns: 300px 4fr;
     grid-template-rows: 1fr 5fr;
 }
 
 .sidebar {
-    background-color: lightskyblue;
+    font-family: 'Lato', sans-serif;
+    color: whitesmoke;
+    background-color: #1992d4;
     grid-area: 1 / 1 / 3 / 2;
-
+    
     display: grid;
-    grid-template-rows: 75px 150px 75px;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 48px 175px;
+    grid-template-rows: 80px 200px 110px;
+    gap: 50px 0;
+}
+
+.sidebar ul {
+    font-size: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.logo,
+.general,
+.settings {
+    grid-column: 2 / 3;
+}
+
+.general li,
+.settings li{
+    margin: 14px 0 14px 0;
+}
+
+.logoIcons,
+.generalIcons,
+.settingsIcons {
+    grid-column: 1 / 2;
+}
+
+.generalIcons li,
+.settingsIcons li {
+    margin: 6px 0 6px 0;
+    height: 32px;
+}
+
+.logoIcons {
+    grid-row: 1 / 2;
+}
+
+.logoIcons li {
+    height: 48px;
+    margin: 0 0 0 -8px ;
+}
+
+.generalIcons {
+    grid-row: 2 / 3;
+}
+
+.settingsIcons {
+    grid-row: 3 / 4;
 }
 
 .header {
+    font-family: 'Lato', sans-serif;
     background-color: whitesmoke;
     grid-area: 1 / 2 / 2 / 3;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, 1fr);
     grid-template-rows: 1fr 1fr;
 }
 
 .header>div {
-    border: 2px red solid;
+    /* border: 2px red solid; */
     min-height: 50px;
 }
 
 
 .search {
     grid-area: 1 / 1 / 2 / 4;
+
+    display: grid;
+    grid-template-columns: 40px 40px 1fr;
+    align-items: center;
 }
 
 .profile {
     grid-area: 1 / 4 / 2 / 5;
 
     display: grid;
-    grid-template-columns: 1fr 20px 100px 100px;
+    align-items: center;
+    grid-template-columns: 1fr 40px 75px 150px;
 }
+
+ion-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.logoIcons ion-icon {
+    width: 48px;
+    height: 48px;
+}
+
 
 .greeting {
     grid-area: 2 / 1 / 3 / 3;
 
     display: grid;
-    grid-template-columns: 75px 1fr;
-    grid-template-rows: 25px 50px;
+    align-items: center;
+    grid-template-columns: 30px 85px 1fr;
+    grid-template-rows: 1fr;
 }
 
-.greeting>.profilePicture {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-}
-
-.greeting>p,
-.greeting>h2,
+.greeting p,
+.greeting h2,
 .profile>h4 {
     margin: 0;
 }
 
 .actions {
     grid-area: 2 / 3 / 3 / 5;
+
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr repeat(3, 100px);
 }
 
 .profilePicture {
@@ -74,9 +143,14 @@ body {
     width: 50px;
     border-radius: 100%;
 }
+.greeting .profilePicture {
+    height: 65px;
+    width: 65px;
+    margin: 10px;
+}
 
 .header button {
-    background-color: lightskyblue;
+    background-color: #1992d4;
     width: 75px;
     height: 50px;
     border-radius: 50px;
@@ -84,9 +158,9 @@ body {
 }
 
 .bar {
-    height: 20px;
-    width: 100%;
-    background-color: grey;
+    height: 32px;
+    width: 75%;
+    background-color:lightgray;
     border-radius: 50px;
 }
 
