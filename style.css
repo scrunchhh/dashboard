@@ -173,7 +173,7 @@ ion-icon {
 
     display: grid;
     padding: 20px;
-    grid-template-columns: 1fr 1fr minmax(350px, 1fr);
+    grid-template-columns: 1fr 1fr 0.75fr;
     grid-template-rows: repeat(6, 1fr);
     gap: 20px;
 }
@@ -188,16 +188,29 @@ ion-icon {
 }
 
 .card {
-    border: 2px red solid;
     grid-row: span 2;
+    background: linear-gradient(
+        90deg,
+        #F0B429,
+        #F0B429 12px,
+        whitesmoke 10px,
+        whitesmoke 
+    );
+}
+
+.card,
+.annoucements,
+.trending {
+    border-radius: 15px;
 }
 
 .annoucements {
+    background-color: whitesmoke;
     grid-area: 1 / 3 / 4 / 4;
-    border: 2px solid red;
 }
 
 .trending {
+    background-color: whitesmoke;
     grid-area: 4 / 3 / 7 / 4;
-    border: 2px solid red;
+
 }
